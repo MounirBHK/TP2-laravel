@@ -2,7 +2,7 @@
 <html lang="FR">
 <head>
     <meta charset="UTF-8">
-    <title>TP1-LARAVEL-CRUD</title>
+    <title>TP2-LARAVEL-CRUD</title>
 </head>
 <body>
         <h1>TP1-LARAVEL-CRUD</h1>
@@ -15,19 +15,27 @@
         <h2>Professeur : Marcos Sanches</h2>
         <hr>
         <h3>Création d'un site web dynamique en utilisant le cadriciel Laravel</h3>
-        <h4>Le mandat est de créer un site Internet pour recueillir de l'information auprès des étudiants du Collège Maisonneuve, et possiblement à l'avenir, de construire un réseau social pour eux.</h4>
+        <h4>Le mandat est d'apporter des modifications au site pour recueillir de l'information auprès des étudiants du Collège Maisonneuve</h4>
+        <ul>
+            <li>controle de connexion</li>
+            <li>modification dans la base de données pour la table etudiants et lien avec users</li>
+            <li>gestion des langues</li>
+            <li>gestion des articles selon la connexion</li>
+            <li>gestion de chargement et téléchargement de document pdf doc zip suivant l'utilisateur</li>
+            <li></li>
+        </ul>
         
         
         <ol>
             <li>Nouveau projet Laravel : <strong>composer create-project --prefer-dist laravel/laravel MaisonneuveE2195646 "8.*"</strong></li>
-            <li>Créer la base de données : <strong>CREATE DATABASE TP1_Laraval_S4</strong></li>
+            <li>Créer la base de données : <strong>CREATE DATABASE TP2_Laraval_S4</strong></li>
             <li>Modification du fichier .env : 
                 <strong>
                     <pre>
                         APP_NAME="MaisonneuveE2195646"
                         ...
                 
-                        DB_DATABASE=TP1_Laravel_S4
+                        DB_DATABASE=TP2_Laravel_S4
                         DB_USERNAME=root
                         DB_PASSWORD=
                     </pre>
@@ -39,6 +47,8 @@
                     <pre>
                         php artisan make:model ville 
                         php artisan make:model etudiant 
+                        php artisan make:model article 
+                        php artisan make:model Document 
                     </pre>
                 </strong>
             </li>
@@ -47,6 +57,8 @@
                     <pre>
                         php artisan make:migration create_villes_table
                         php artisan make:migration create_etudiants_table
+                        php artisan make:migration create_articles_table
+                        php artisan make:migration create_documents_table
                         php artisan migrate
                     </pre>
                 </strong>
@@ -78,6 +90,8 @@
                     <pre>
                         php artisan make:controller VilleController -m Ville
                         php artisan make:controller EtudiantController -m Etudiant
+                        php artisan make:controller ArticleController -m Etudiant
+                        php artisan make:controller DocumentController -m Etudiant
                     </pre>
                 </strong>
             </li>
